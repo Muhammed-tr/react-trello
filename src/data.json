@@ -1,0 +1,130 @@
+{
+  "boards": [
+    {
+      "name": "E-Ticaret Platformu Geliştirme",
+      "isActive": false,
+      "columns": [
+        {
+          "name": "Yapılacaklar",
+          "tasks": [
+            {
+              "title": "Üyelik Sistemi UI Tasarımı",
+              "description": "",
+              "status": "Yapılacak",
+              "subtasks": [
+                {
+                  "title": "Kayıt Ol sayfası",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Giriş Yap sayfası",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Yapılıyor",
+          "tasks": [
+            {
+              "title": "Ürün Yönetimi API Entegrasyonu",
+              "description": "",
+              "status": "Yapılıyor",
+              "subtasks": [
+                {
+                  "title": "Ürün Ekleme API'si",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Ürün Silme API'si",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tamamlandı",
+          "tasks": [
+            {
+              "title": "İlk Prototip Testleri",
+              "description": "",
+              "status": "Tamamlandı",
+              "subtasks": [
+                {
+                  "title": "5 Kullanıcı ile Test",
+                  "isCompleted": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pazarlama Stratejisi",
+      "isActive": false,
+      "columns": [
+        {
+          "name": "Yapılacaklar",
+          "tasks": [
+            {
+              "title": "Sosyal Medya Kampanyası Planla",
+              "description": "",
+              "status": "Yapılacak",
+              "subtasks": [
+                {
+                  "title": "Hedef Kitle Belirleme",
+                  "isCompleted": false
+                },
+                {
+                  "title": "İçerik Taslağı Hazırlama",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Yapılıyor",
+          "tasks": []
+        },
+        {
+          "name": "Tamamlandı",
+          "tasks": []
+        }
+      ]
+    },
+    {
+      "name": "Gelecek Planı",
+      "isActive": false,
+      "columns": [
+        {
+          "name": "Şimdi",
+          "tasks": [
+            {
+              "title": "İlk Sürüm Yayını",
+              "description": "",
+              "status": "",
+              "subtasks": [
+                {
+                  "title": "Ön Kayıt Listesine Özel Yayın",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sonraki",
+          "tasks": []
+        },
+        {
+          "name": "Daha Sonra",
+          "tasks": []
+        }
+      ]
+    }
+  ]
+}
