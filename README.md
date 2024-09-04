@@ -1,5 +1,5 @@
-React Trello App
-
-yarn install
-
-yarn start
+git add .
+git commit -m ""
+git push origin main
+yarn install gh-pages --save-dev
+yarn run deploy
