@@ -1,16 +1,16 @@
 {
   "boards": [
     {
-      "name": "E-Ticaret Platformu Geliştirme",
+      "name": "E-Ticaret Platformu",
       "isActive": false,
       "columns": [
         {
-          "name": "Yapılacaklar",
+          "name": "To-do",
           "tasks": [
             {
               "title": "Üyelik Sistemi UI Tasarımı",
               "description": "",
-              "status": "Yapılacak",
+              "status": "TO-DO",
               "subtasks": [
                 {
                   "title": "Kayıt Ol sayfası",
@@ -25,12 +25,12 @@
           ]
         },
         {
-          "name": "Yapılıyor",
+          "name": "Doing",
           "tasks": [
             {
-              "title": "Ürün Yönetimi API Entegrasyonu",
+              "title": "Erp API Entegrasyonu",
               "description": "",
-              "status": "Yapılıyor",
+              "status": "Doing",
               "subtasks": [
                 {
                   "title": "Ürün Ekleme API'si",
@@ -45,12 +45,12 @@
           ]
         },
         {
-          "name": "Tamamlandı",
+          "name": "Done",
           "tasks": [
             {
               "title": "İlk Prototip Testleri",
               "description": "",
-              "status": "Tamamlandı",
+              "status": "Done",
               "subtasks": [
                 {
                   "title": "5 Kullanıcı ile Test",
