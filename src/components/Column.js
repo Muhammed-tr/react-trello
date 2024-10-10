@@ -1,5 +1,4 @@
-import { shuffle } from "lodash";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import boardsSlice from "../redux/boardsSlice";
 import Task from "./Task";
@@ -17,18 +16,13 @@ function Column({ colIndex }) {
     "bg-sky-500",
   ];
 
-  
-
   const dispatch = useDispatch();
-  const [color, setColor] = useState(null)
   const boards = useSelector((state) => state.boards);
   const board = boards.find((board) => board.isActive === true);
   const col = board.columns.find((col, i) => i === colIndex);
-  useEffect(() => {
-    setColor(shuffle(colors).pop())
-  }, [dispatch]);
 
-
+  // Assign a unique, fixed color based on column index
+  const color = colors[colIndex % colors.length];
 
   const handleOnDrop = (e) => {
     const { prevColIndex, taskIndex } = JSON.parse(
@@ -47,23 +41,22 @@ function Column({ colIndex }) {
   };
 
   return (
-<div
-  onDrop={handleOnDrop}
-  onDragOver={handleOnDragOver}
-  className="scrollbar-hide mx-5 pt-[90px] min-w-[280px]"
->
-  <p
-    className={`p-2 rounded-full font-semibold flex  items-center  gap-2 tracking-widest md:tracking-[.2em] text-[#ffffff] ${color}`}
-  >
-    <div className={`rounded-full w-4 h-4 ${color}`} />
-    {col.name} ({col.tasks.length})
-  </p>
+    <div
+      onDrop={handleOnDrop}
+      onDragOver={handleOnDragOver}
+      className="scrollbar-hide mx-5 pt-[90px] min-w-[280px]"
+    >
+      <p
+        className={`p-2 rounded-full font-semibold flex items-center gap-2 tracking-widest md:tracking-[.2em] text-[#ffffff] ${color}`}
+      >
+        <div className={`rounded-full w-4 h-4 ${color}`} />
+        {col.name} ({col.tasks.length})
+      </p>
 
-  {col.tasks.map((task, index) => (
-    <Task key={index} taskIndex={index} colIndex={colIndex} />
-  ))}
-</div>
-
+      {col.tasks.map((task, index) => (
+        <Task key={index} taskIndex={index} colIndex={colIndex} color={color} />
+      ))}
+    </div>
   );
 }
 

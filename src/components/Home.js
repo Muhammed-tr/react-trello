@@ -48,6 +48,7 @@ function Home() {
           setIsSideBarOpen={setIsSideBarOpen}
         />
       )}
+      
 
       {/* Columns Section */}
 
@@ -81,3 +82,4 @@ function Home() {
 }
 
 export default Home;
+

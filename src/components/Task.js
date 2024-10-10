@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import TaskModal from "../modals/TaskModal";
+import '../assets/css/task.css';
 
-function Task({ colIndex, taskIndex }) {
+import rightButton from '../assets/right-button.svg';
+import miniCalendar from '../assets/mini-calendar.svg';
+import fork from '../assets/fork-blue.svg';
+import people from '../assets/people-blue.svg';
+import flag from '../assets/flag.svg';
+
+function Task({ colIndex, taskIndex, color }) {
   const boards = useSelector((state) => state.boards);
   const board = boards.find((board) => board.isActive === true);
   const columns = board.columns;
@@ -33,20 +40,58 @@ function Task({ colIndex, taskIndex }) {
         }}
         draggable
         onDragStart={handleOnDrag}
-        className=" w-[280px] first:my-5 rounded-lg  bg-white  dark:bg-[#2b2c37] shadow-[#364e7e1a] py-6 px-3 shadow-lg hover:text-[#635fc7] dark:text-white dark:hover:text-[#635fc7] cursor-pointer "
+        className="task-container"
+        style={{ borderColor: color }} // Use the passed color here
       >
-        <p className=" font-bold tracking-wide ">{task.title}</p>
-        <p className=" font-bold text-xs tracking-tighter mt-2 text-gray-500">
-          {completed} of {subtasks.length} completed tasks
-        </p>
+        <div className="task-frame">
+          <div className="task-content">
+            <p className="task-title">{task.title}</p>
+            <div className="task-icon">
+              <img src={rightButton} alt="icon" />
+            </div>
+          </div>
+          <div className="task-divider"></div>
+        </div>
+
+        <div className="task-info">
+          <div className="task-date">
+            <div className="mini-calendar-icon">
+              <img src={miniCalendar} alt="mini calendar" />
+            </div>
+            <span className="date-text">August 12</span>
+          </div>
+          <div className="task-status">
+            <span>%50</span>
+          </div>
+        </div>
+
+        <div className="task-stats">
+          <div className="stat-group">
+            <div className="stat-icon">
+              <img src={fork} alt="Fork icon" />
+            </div>
+            <div className="stat-text">8</div>
+          </div>
+
+          <div className="stat-group">
+            <div className="stat-icon">
+              <img src={people} alt="People icon" />
+            </div>
+            <div className="stat-text">4</div>
+          </div>
+          <div className="task-extra">
+            <img src={flag} alt="Right button" />
+          </div>
+        </div>
+
+        {isTaskModalOpen && (
+          <TaskModal
+            colIndex={colIndex}
+            taskIndex={taskIndex}
+            setIsTaskModalOpen={setIsTaskModalOpen}
+          />
+        )}
       </div>
-      {isTaskModalOpen && (
-        <TaskModal
-          colIndex={colIndex}
-          taskIndex={taskIndex}
-          setIsTaskModalOpen={setIsTaskModalOpen}
-        />
-      )}
     </div>
   );
 }
